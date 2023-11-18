@@ -1,0 +1,26 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+// щапка блоку
+.block-header {
+    // .block-header__label
+    &__label {
+        line-height: 156,25%;
+        text-transform: capitalize;
+    }
+    //.block-header__title
+    &__title {
+        color: $goldColor;
+        text-transform: capitalize;
+        font-family: "Italiana";
+        font-size: toRem(48);
+    }
+    //.block-header__text
+    &__text {
+        line-height: 156,25%;
+
+    }
+    //.block-header__button
+    &__button {
+        
+    }
+}
