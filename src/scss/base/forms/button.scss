@@ -10,13 +10,6 @@
 	font-weight: 300;
 	line-height: 156%;
 	background-color: #fff;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&--fw {
-		width: 100%;
-	}
 	&::before {
 		content: "";
 		position: absolute;
@@ -24,10 +17,34 @@
 		height: 100%;
 		top: 0;
 		left: 0;
+		transition: opacity 0.3s;
 		opacity: 0.5;
 		background: url('@img/bg-button.jpg') center no-repeat;
-	} 
+		background-size: 100% 100%;
+	}
+	&--fw {
+		width: 100%;
+	}
+	&--border {
+		transition: color 0.3s;
+		background-color: transparent;
+		border: toRem(1) solid $BgGold;
+		color: $BgGold;
+		&::before {
+			opacity: 0;
+		}
+
+	}
 	span {
 		position: relative;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			color: $mainColor;
+			border: toRem(1) solid $BgGold;
+			&::before {
+				opacity: 1;;
+			}
+		}
 	}
 };

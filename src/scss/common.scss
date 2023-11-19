@@ -2,6 +2,9 @@
 
 // щапка блоку
 .block-header {
+    display: grid;
+    gap: toRem(20);
+    justify-items: start;
     // .block-header__label
     &__label {
         line-height: 156,25%;
@@ -16,7 +19,12 @@
     }
     //.block-header__text
     &__text {
+        display: grid;
+        gap: toRem(20);
         line-height: 156,25%;
+        blockquote {
+            font-style: italic;
+        }
 
     }
     //.block-header__button
@@ -24,3 +32,4 @@
         
     }
 }
+
