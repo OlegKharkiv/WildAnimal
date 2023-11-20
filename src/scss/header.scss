@@ -20,9 +20,14 @@
 		@include adaptiveValue("width", 217, 80);
 		position: relative;
 		z-index: 5;
-		path{
-			fill: #fff;
+		@media (max-width: $mobile) {
+			.menu-open & {
+				path {
+					fill: #fff;
+				};
+			}
 		}
+		
 		
 	}
 	&__action {
@@ -35,14 +40,35 @@
 	}
 	&__body {
 		@media (max-width: $mobile){
+			  display: grid;
+			  grid-template-rows: 1fr auto;
+			  gap: toRem(30);
 			  position: fixed;
 			  width: 100%;
 			  height: 100%;
-			  left: 0;
+			  left: -100%;
 			  top: 0;
 			  overflow: auto;
 			  background-color: $BgGold;
+			  transition: left 0.3s;
 			  padding: toRem(100) toRem(15) toRem(30) toRem(15);
+			  &::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				@include adaptiveValue("height", 152, 70);
+				top: 0;
+				left: -100%;
+				z-index: 2;
+				transition: left 0.3s;
+				background-color: $BgGold;
+			  }
+			  .menu-open & {
+				left: 0;
+				&::before {
+					left: 0;
+				}
+			  }
 		}
 	}
 	&__list {
@@ -83,16 +109,26 @@
 	column-gap: toRem(47);
 	row-gap: toRem(3);
 	align-items: center;
+	@media (max-width: $mobile) {
+		justify-content: center;
+	}
 
 	&__link {
 		display: inline-block;
 		color: $BgGold;
 		font-weight: 300;
 		line-height: 152%;
+		@media (max-width: $mobile) {
+			color: #fff;
+		}
 	}
 	&__button {
 		@media (max-width: $tablet) {
 			padding: toRem(8) toRem(20);
+		}
+		@media (max-width: $mobile) {
+			border: toRem(1) solid #fff;
+			color:#fff;
 		}
 	}
 }
@@ -122,7 +158,10 @@
 			position: absolute;
 			width: 100%;
 			height: toRem(2);
-			background-color: #fff;
+			background-color: $BgGold;
+			.menu-open & {
+				background-color:#fff;
+			}
 		}
 		&::before {
 			top: 0;
