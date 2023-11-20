@@ -96,6 +96,11 @@
 			color: #fff;
 			font-size: toRem(28);
 		}
+		@media (any-hover: hover){
+			&:hover{
+				text-decoration: underline;
+			}
+		}
 	}
 }
 .icon-menu {
@@ -120,6 +125,11 @@
 		line-height: 152%;
 		@media (max-width: $mobile) {
 			color: #fff;
+		}
+		@media (any-hover: hover){
+			&:hover{
+				text-decoration: underline;
+			}
 		}
 	}
 	&__button {
@@ -190,4 +200,3 @@
 		}
 	}
 }
-
