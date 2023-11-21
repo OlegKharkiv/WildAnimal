@@ -1,3 +1,69 @@
 //====================================================================================================
+.footer {
+    padding-bottom: toRem(0) toRem(0) toRem(0) toRem(0);
+    background: $BgDark url('@img/left_footer_decor.svg') left bottom no-repeat;
+    &__container {
 
+    }
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__content {
+        border-right: toRem(1) solid $BgGold;
+    }
+    &__menu {
+
+    }
+    &__social {
+
+    }
+    &__logo {
+        justify-self: center;
+        @include adaptiveValue("width", 287, 80);
+    }
+    &__subscribe {
+        
+    }
+    &__copy {
+
+    }
+}
+.menu-footer {
+    &__title {
+
+    }
+    &__list {
+
+    }
+    &__item {
+
+    }
+    &__link {
+
+    }
+}
+.social {
+    &__item {
+
+    }
+}
+.subscribe {
+    border-left: toRem(1) solid $BgGold;
+    display: grid;
+    justify-items: end;
+
+    &__title {
+
+    }
+    &__form {
+
+    }
+    &__input {
+
+    }
+    &__button {
+
+    }
+}
 //====================================================================================================
