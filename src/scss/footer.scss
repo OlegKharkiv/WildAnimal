@@ -1,19 +1,46 @@
 //====================================================================================================
 .footer {
+    position: relative;
     padding-bottom: toRem(0) toRem(0) toRem(0) toRem(0);
-    background: $BgDark url('@img/left_footer_decor.svg') left bottom no-repeat;
+    background-color: $BgDark;
+    color: $BgGold;
+    &::before, 
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: toRem(174);
+    }
+    &::before {
+        content: "";
+        left: 0;
+        bottom: 0;
+        background: url('@img/left_footer_decor.svg') left bottom /100% no-repeat;
+    }
+    &::after {
+        content: "";
+        right: 0;
+        top: 0;
+        transform: rotate(-180deg);
+        background: url('@img/left_footer_decor.svg') left bottom /100% no-repeat;
+    }
     &__container {
 
     }
     &__body {
+        @include adaptiveValue("padding-top", 92, 40);
+        @include adaptiveValue("padding-bottom", 45, 30);
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
     &__content {
         border-right: toRem(1) solid $BgGold;
+        @include adaptiveValue("padding-right", 40, 15);
     }
     &__menu {
-
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 40, 20);
+        }
     }
     &__social {
 
@@ -23,38 +50,76 @@
         @include adaptiveValue("width", 287, 80);
     }
     &__subscribe {
-        
     }
     &__copy {
-
+        @include adaptiveValue("padding-top", 42, 15);
+        @include adaptiveValue("padding-bottom", 42, 15);
     }
 }
 .menu-footer {
     &__title {
-
+        list-style: none;
+        font-family: "Italiana";
+        font-size: toRem(20);
+        text-transform: capitalize;
+        &::marker,
+        &::-webkit-details-marker {
+            display: none;
+        }
+        &:not(:last-child) {
+            margin-bottom: toRem(15);
+        }
     }
     &__list {
-
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: toRem(3);
+        @include adaptiveValue("column-gap", 42, 15);
     }
     &__item {
 
     }
     &__link {
-
+        font-weight: 300;
+        line-height: 156%;
+        display: inline-block;
+        transition: color 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $goldColorHover;
+            }
+        }
     }
 }
 .social {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: toRem(3);
+    @include adaptiveValue("column-gap", 41, 15);
     &__item {
-
+        font-size: toRem(24);
+        transition: color 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $goldColorHover;
+            }
+        }
     }
 }
 .subscribe {
     border-left: toRem(1) solid $BgGold;
+    @include adaptiveValue("padding-left", 40, 15);
     display: grid;
     justify-items: end;
+    // justify-content: end;
+    &__body {
+        max-width: toRem(350);
+    }
 
     &__title {
-
+        font-family: "Italiana";
+        font-size: toRem(32);
+        text-transform: capitalize;
     }
     &__form {
 
