@@ -28,9 +28,9 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.swiper')) { // Вказуємо склас потрібного слайдера
+	if (document.querySelector('.hero__slider')) { // Вказуємо склас потрібного слайдера
 		// Створюємо слайдер
-		new Swiper('.swiper', { // Вказуємо склас потрібного слайдера
+		new Swiper('.hero__slider', { // Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
 			modules: [Navigation],
@@ -40,6 +40,7 @@ function initSliders() {
 			spaceBetween: 0,
 			//autoHeight: true,
 			speed: 800,
+			// centeredSlides: true,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -74,8 +75,8 @@ function initSliders() {
 
 			// Кнопки "вліво/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.hero__arrow--left',
+				nextEl: '.hero__arrow--right',
 			},
 			/*
 			// Брейкпоінти
@@ -101,7 +102,7 @@ function initSliders() {
 			*/
 			// Події
 			on: {
-
+				
 			}
 		});
 	}
