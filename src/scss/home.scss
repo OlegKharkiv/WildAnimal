@@ -34,18 +34,48 @@
     }
     &__button {}
     &__slider.swiper {
+        position: relative;
         padding-top: toRem(50);
         padding-bottom: toRem(50);
-        // margin-top: -50%;
+        z-index: 2;
         // flex: 0 0 toRem(700);
         // width: toRem(700);
     }
     &__wrapper {}
     &__slide {}
-    &__control {}
+    &__controll {
+        z-index: 4;
+        position: absolute;
+        bottom: toRem(30);
+        right: toRem(15);
+        display: flex;
+        gap: toRem(30);
+    }
     &__arrow {
-        &--left {}
-        &--right {}
+        color: $BgGold;
+        font-size: toRem(16);
+        transition: transform 0.3s;
+        &--left {
+            @media (any-hover: hover){
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+        }
+        &--right {
+            @media (any-hover: hover){
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+        }
+        
+    }
+    &__mini {
+        overflow: hidden;
+        padding-top: toRem(30);
+        padding-bottom: toRem(30);
+        transform: translate(0px, -30%);
     }
     &__mini-slider{}
     &__bg {
@@ -68,6 +98,7 @@
     &--mini {
         flex: 0 0 auto;
         padding: toRem(3);
+        width: toRem(117);
     }
     &__body {
         background: linear-gradient(135deg,rgba(20, 17, 10, 1) 0%, rgba(33, 28, 22, 1), rgba(20, 17, 10, 1) 100%);
@@ -93,14 +124,14 @@
     }
 }
 .mini-slider.swiper {
-    padding-top: toRem(30);
-    padding-bottom: toRem(30);
-    transform: translate(0, -30%);
+    overflow: visible;
+    width: toRem(117);
+    transform: translate(toRem(-130), 0);
     &__wrapper {
 
     }
     &__slide {
-        width: 28.536585%;
+        // width: 28.536585%;
         cursor: pointer;
     }
 }

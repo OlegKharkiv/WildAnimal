@@ -121,8 +121,10 @@ function initSliders() {
 			// для конкретного випадку
 			modules: [Navigation, Controller],
 			observer: true,
+			loop: true,
 			observeParents: true,
-			slidesPerView: 3,
+			slidesPerView: "auto",
+			loopAdditionalSlides: 10,
 			slideToClickedSlide: true,
 			spaceBetween: 20,
 			//autoHeight: true,
