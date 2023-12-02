@@ -173,28 +173,21 @@ function initSliders() {
 				prevEl: '.hero__arrow--left',
 				nextEl: '.hero__arrow--right',
 			},
-			/*
 			// Брейкпоінти
 			breakpoints: {
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
+				320: {
+					centeredSlides: true,
+					spaceBetween: 15,
 				},
 				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
+					centeredSlides: true,
+					spaceBetween: 15,
 				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
+				1200: {
+					centeredSlides: false,
 					spaceBetween: 30,
 				},
 			},
-			*/
 			// thumbs: {
 			// 	swiper: miniSlider,
 			// 	multipleActiveThumbs: true
