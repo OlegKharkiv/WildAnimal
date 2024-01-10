@@ -5,6 +5,9 @@
     display: grid;
     gap: toRem(20);
     justify-items: start;
+    &--center {
+        justify-items: center;
+    }
     // .block-header__label
     &__label {
         line-height: 156,25%;
@@ -15,7 +18,8 @@
         color: $goldColor;
         text-transform: capitalize;
         font-family: "Italiana";
-        font-size: toRem(48);
+        // font-size: toRem(48);
+        @include adaptiveValue("font-size", 48, 42);
         line-height: 120%;
     }
     //.block-header__text
