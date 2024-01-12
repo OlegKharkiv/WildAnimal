@@ -362,4 +362,62 @@
         } 
     }
 }
+//====================================================================================================
+.services {
+    background-color: $BgDark;
+    @include adaptiveValue("padding-top", 175, 30);
+    @include adaptiveValue("padding-bottom", 175, 30);
+    position: relative;
+    &::before {
+        content: '';
+        background: url("@img/services/Group.svg") top right / 100% no-repeat;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    @media (min-width:$tablet){
+        &::after {
+            content: '';
+            position: absolute;
+            width: 41.510417%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: $goldColor;
+        }
+    }
+    &__container {
+        position: relative;
+        z-index: 2; 
+        display: flex;
+        align-items: flex-start;
+        @media (max-width:$tablet){
+            flex-direction: column-reverse;
+            gap: toRem(30);
+        }
 
+    }
+    &__image {
+        flex: 0 1 50%;
+        padding: toRem(15);
+        border: toRem(1) solid #fff;
+        margin: toRem(-15);
+        img {
+            max-width: 100%; 
+        }
+        @media (max-width:$tablet){
+            align-items: center;
+            margin: toRem(0);
+        }
+    }
+    &__block-header {
+        flex: 0 1 50%;
+        align-self: center;
+        @include adaptiveValue("margin-left", 168, 50, 0, $containerWidth, 991.98);
+        @media (min-width:$tablet){
+            max-width: toRem(460);
+        }
+    }
+}
