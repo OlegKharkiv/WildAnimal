@@ -348,6 +348,16 @@
         visibility: hidden;
         transition: opacity 0.3s;
         z-index: 2;
+        @media (any-hover: none){
+            top: auto;
+            transform: translate(-50%, 0);
+            bottom: toRem(0);
+            opacity: 1;
+            visibility: visible;
+            width: 100%;
+            border-radius: 0;
+            text-align: center;
+        }
     }
 }
 .rating {
@@ -420,4 +430,70 @@
             max-width: toRem(460);
         }
     }
+}
+//====================================================================================================
+.gallery {
+    background-color: #efe9dd;
+    @include adaptiveValue("padding-top", 160, 30);
+    @include adaptiveValue("padding-bottom", 160, 30);
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-between;
+        @include adaptiveValue("row-gap", 126, 15);
+        @media (max-width:$mobile){
+            grid-template-columns: auto;
+       }
+    }
+    &__item {
+        &:nth-child(4n + 1),
+        &:nth-child(4n) {
+            @include adaptiveValue("width", 592, 300, 2, $containerWidth, 767.98);
+        }
+        &:nth-child(4n) {
+            @media (min-width:$mobile){
+                justify-self: end;
+            }
+        } 
+    }
+    &__image {
+        display: block;
+        img {
+            transition: transform 0.3s;
+            width: 100%;
+        }
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 52, 15);
+        }
+        @media (any-hover: hover){
+            &:hover{
+                img {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        font-family: "Italiana";
+        color: $goldColor;
+        line-height: 120%;
+        gap: toRem(10);
+        @include adaptiveValue("font-size", 32, 24);
+        &::before {
+            margin-top: em(6, 32);
+            flex-shrink: 0;
+            font-size: em(24, 32);
+        }
+        @media (any-hover: hover){
+            &:hover{
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    
 }

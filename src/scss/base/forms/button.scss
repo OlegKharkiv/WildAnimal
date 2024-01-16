@@ -9,6 +9,8 @@
 	padding: toRem(10) toRem(40);
 	font-weight: 300;
 	line-height: 156%;
+	justify-content: center;
+	align-items: center;
 	background-color: #fff;
 	&::before {
 		content: "";
@@ -19,8 +21,8 @@
 		left: 0;
 		transition: opacity 0.3s;
 		opacity: 0.5;
-		background: url('@img/bg-button.jpg') center no-repeat;
-		background-size: 100% 100%;
+		background: url('@img/bg-button.jpg') center / cover no-repeat;
+		// background-size: 100% 100%;
 	}
 	&--fw {
 		width: 100%;
